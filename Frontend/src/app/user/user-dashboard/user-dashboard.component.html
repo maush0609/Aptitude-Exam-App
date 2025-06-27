@@ -1,0 +1,12 @@
+<div class="exam-container">
+  <div class="header-row">
+    <h2 class="welcome-title">Welcome!</h2>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+
+  <div class="exam-card" *ngFor="let exam of availableExams">
+    <h3>{{ exam.title }}</h3>
+    <p>{{ exam.description }}</p>
+    <button (click)="startExam(exam.id)">Start Exam</button>
+  </div>
+</div>

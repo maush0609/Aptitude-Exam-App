@@ -1,0 +1,121 @@
+$mint-bg: #e6fff5;
+$mint-light: #f0fff8;
+$mint-dark: #c1f1dc;
+$text-soft: #3a6e5f;
+$border-soft: #d8f6ec;
+$shadow: 0 8px 20px rgba(100, 200, 150, 0.2);
+$radius: 20px;
+$padding: 2rem;
+
+form {
+  background: linear-gradient(to bottom right, $mint-light, $mint-bg);
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  margin-bottom: 2rem;
+  color: $text-soft;
+  font-family: 'Comic Neue', 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  mat-form-field {
+    width: 100%;
+
+    .mat-form-field-outline {
+      border-radius: $radius;
+      border-color: $border-soft;
+    }
+
+    .mat-form-field-label {
+      color: $text-soft;
+      font-weight: 600;
+    }
+
+    .mat-input-element {
+      color: #333;
+    }
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  button {
+    border-radius: $radius;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    box-shadow: 0 4px 12px rgba(100, 200, 150, 0.2);
+
+    &.mat-raised-button {
+      background-color: $mint-dark;
+      color: $text-soft;
+
+      &:hover {
+        background-color: darken($mint-dark, 5%);
+      }
+    }
+
+    &.mat-button {
+      color: $text-soft;
+
+      &:hover {
+        background-color: rgba(100, 200, 150, 0.1);
+      }
+    }
+  }
+}
+
+table.mat-elevation-z8 {
+  border-radius: $radius;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: $shadow;
+  font-family: 'Comic Neue', 'Segoe UI', sans-serif;
+  width: 100%;
+
+  th,
+  td {
+    padding: 1rem;
+    color: $text-soft;
+    border-bottom: 1px solid $border-soft;
+    text-align: center;
+  }
+
+  th {
+    background-color: $mint-bg;
+    font-weight: 600;
+  }
+
+  td {
+    background-color: #fff;
+  }
+
+  button {
+    border-radius: $radius;
+    font-weight: bold;
+    text-transform: none;
+    color: $text-soft;
+
+    &:hover {
+      background-color: rgba(100, 200, 150, 0.1);
+    }
+
+    &.mat-button[color='warn'] {
+      color: #d9534f;
+
+      &:hover {
+        background-color: rgba(217, 83, 79, 0.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="exam-creation-form">
+  <h2>{{ isEditing ? 'Edit Exam' : 'Create New Exam' }}</h2>
+
+  <label for="title">Title</label>
+  <input id="title" type="text" [(ngModel)]="isEditing ? editExam.title : newExam.title" placeholder="Title" />
+
+  <label for="description">Description</label>
+  <textarea id="description" [(ngModel)]="isEditing ? editExam.description : newExam.description" placeholder="Description"></textarea>
+
+  <label for="start-time">Start Time</label>
+  <input id="start-time" type="datetime-local" [(ngModel)]="isEditing ? editExam.startTime : newExam.startTime" />
+
+  <label for="end-time">End Time</label>
+  <input id="end-time" type="datetime-local" [(ngModel)]="isEditing ? editExam.endTime : newExam.endTime" />
+
+  <label for="duration">Duration (min)</label>
+  <input id="duration" type="number" [(ngModel)]="isEditing ? editExam.durationMinutes : newExam.durationMinutes" placeholder="Duration (min)" />
+
+  <label>
+    <input type="checkbox" [(ngModel)]="isEditing ? editExam.isPublished : newExam.isPublished" />
+    Publish Now
+  </label>
+
+  <div *ngIf="!isEditing">
+    <h3>Select Questions</h3>
+    <div *ngFor="let q of questions" class="question-checkbox">
+      <input type="checkbox" [value]="q.id" (change)="toggleQuestionSelection(q.id)" />
+      {{ q.text }}
+    </div>
+  </div>
+
+  <button *ngIf="!isEditing" (click)="createExam()">Create Exam</button>
+  <button *ngIf="isEditing" (click)="updateExam()">Update Exam</button>
+  <button *ngIf="isEditing" (click)="cancelEdit()">Cancel</button>
+</div>
+
+<div class="exam-list">
+  <h2>All Exams</h2>
+  <ul>
+    <li *ngFor="let exam of exams">
+      <strong>{{ exam.title }}</strong> - {{ exam.durationMinutes }} min
+      <button (click)="startEdit(exam)">Edit</button>
+      <button (click)="deleteExam(exam.id)">Delete</button>
+    </li>
+  </ul>
+</div>

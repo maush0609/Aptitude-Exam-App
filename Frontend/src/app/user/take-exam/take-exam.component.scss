@@ -1,0 +1,91 @@
+
+form {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f0fdfa;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1abc9c;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Timer */
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #27c9a7;
+  margin-bottom: 2rem;
+  background: #dffaf4;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem;
+}
+
+
+form > div {
+  background-color: #e3fdf6;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+h4 {
+  font-size: 1.25rem;
+  color: #159e89;
+  margin-bottom: 1rem;
+}
+
+
+div > label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: #444;
+  cursor: pointer;
+  margin: 0.4rem 0;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+div > label:hover {
+  background-color: #d0f5ee;
+}
+
+input[type="radio"] {
+  accent-color: #1abc9c;
+  width: 18px;
+  height: 18px;
+}
+
+
+button[type="submit"] {
+  background-color: #1abc9c;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+  background-color: #159e89;
+  transform: translateY(-2px);
+}

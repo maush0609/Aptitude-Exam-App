@@ -1,0 +1,42 @@
+<div class="login-wrapper">
+  <div class="illustration-section">
+    <img src="assets/bg.jpg" alt="Login Illustration" />
+  </div>
+
+  <div class="login-section">
+    <h2 class="welcome-text">Welcome Back!</h2>
+
+    <mat-card class="login-card">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
+          Login
+        </button>
+
+        <div class="register">
+          Don’t have an account? <a routerLink="/register">Register</a>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<h2>Exam</h2>
+<p>Time Remaining: {{ getFormattedTime() }}</p>
+
+<form (ngSubmit)="submit()">
+  <div *ngFor="let question of questions">
+    <h4>{{ question.text }}</h4>
+
+    <div>
+      <label>
+        <input
+          type="radio"
+          name="q{{ question.id }}"
+          value="A"
+          (change)="trackAnswer(question.id, 'A')"
+          [checked]="userAnswers[question.id] === 'A'"
+        />
+        {{ question.optionA }}
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <input
+          type="radio"
+          name="q{{ question.id }}"
+          value="B"
+          (change)="trackAnswer(question.id, 'B')"
+          [checked]="userAnswers[question.id] === 'B'"
+        />
+        {{ question.optionB }}
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <input
+          type="radio"
+          name="q{{ question.id }}"
+          value="C"
+          (change)="trackAnswer(question.id, 'C')"
+          [checked]="userAnswers[question.id] === 'C'"
+        />
+        {{ question.optionC }}
+      </label>
+    </div>
+
+    <div>
+      <label>
+        <input
+          type="radio"
+          name="q{{ question.id }}"
+          value="D"
+          (change)="trackAnswer(question.id, 'D')"
+          [checked]="userAnswers[question.id] === 'D'"
+        />
+        {{ question.optionD }}
+      </label>
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

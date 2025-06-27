@@ -1,0 +1,56 @@
+<div id="review-container" class="review-container">
+  <h2 class="review-title">Exam Review</h2>
+  <p class="date-line">Date: {{ currentDate }}</p>
+
+  <div class="score-box">
+    <p>
+      <strong>Your Score:</strong>
+      <span class="score">{{ reviewData?.result?.score }}</span> /
+      {{ reviewData?.result?.totalQuestions }}
+    </p>
+  </div>
+
+  <button (click)="downloadPDF()" class="download-btn">Download Report</button>
+
+  <div *ngFor="let item of reviewData?.questions" class="review-card">
+    <h4>{{ item.questionText }}</h4>
+
+    <div class="option-list">
+      <div class="option"
+           [ngClass]="{
+             'selected': item.givenAnswer === 'A',
+             'correct': item.correctAnswer === 'A'
+           }">
+        <strong>A:</strong> {{ item.optionA }}
+      </div>
+      <div class="option"
+           [ngClass]="{
+             'selected': item.givenAnswer === 'B',
+             'correct': item.correctAnswer === 'B'
+           }">
+        <strong>B:</strong> {{ item.optionB }}
+      </div>
+      <div class="option"
+           [ngClass]="{
+             'selected': item.givenAnswer === 'C',
+             'correct': item.correctAnswer === 'C'
+           }">
+        <strong>C:</strong> {{ item.optionC }}
+      </div>
+      <div class="option"
+           [ngClass]="{
+             'selected': item.givenAnswer === 'D',
+             'correct': item.correctAnswer === 'D'
+           }">
+        <strong>D:</strong> {{ item.optionD }}
+      </div>
+    </div>
+
+    <p>
+      <strong>Status:</strong>
+      <span [style.color]="item.isCorrect ? 'green' : 'red'">
+        {{ item.isCorrect ? 'Correct' : 'Incorrect' }}
+      </span>
+    </p>
+  </div>
+</div>
