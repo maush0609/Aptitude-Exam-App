@@ -79,7 +79,7 @@ namespace Project8.Backend.Services
             return new ExamResultDto { UserExamId = ue.Id, Score = score, TotalQuestions = total };
         }
 
-        public async Task<ExamWithQuestionsDto?> GetExamWithQuestionsAsync(int examId) // ✅ Method defined
+        public async Task<ExamWithQuestionsDto?> GetExamWithQuestionsAsync(int examId) 
         {
             var exam = await _context.Exams
                 .Include(e => e.ExamQuestions)
