@@ -57,7 +57,7 @@ namespace Project8.Backend.Services
 
         public string DetermineRole(string email)
         {
-            return email.EndsWith(".admin@examapp.com", StringComparison.OrdinalIgnoreCase) ? "Admin" : "User";
+            return email.EndsWith(".admin@examapp.com", StringComparison.OrdinalIgnoreCase) ? "Admin" : "User"; //to check if admin
         }
     }
 }
