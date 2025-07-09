@@ -132,7 +132,7 @@ namespace Project8.Backend.Services
                 EndTime = exam.EndTime,
                 DurationMinutes = exam.DurationMinutes,
                 IsPublished = exam.IsPublished,
-                CreatedBy = exam.CreatedBy?.UserName ?? "Unknown", // <-- fix for CS8601
+                CreatedBy = exam.CreatedBy?.UserName ?? "Unknown", 
                 Questions = exam.ExamQuestions.Select(eq => new QuestionDto
                 {
                     Id = eq.QuestionId,
